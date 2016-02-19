@@ -1,0 +1,15 @@
+{
+  "name": "random_fml",
+  "version": "1.0.0",
+  "description": "Gives a promise of a random FML.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lars-Erik Bruce",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "request-promise": "^2.0.1"
+  }
+}
