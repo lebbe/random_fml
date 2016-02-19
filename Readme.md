@@ -5,7 +5,7 @@ This module serves you a Promise of a random FML.
 Usage:
 
 ```javascript
-require('random_fml').then(fml => console.log(fml))
+require('random_fml')().then(fml => console.log(fml))
 ```
 
 Output:
