@@ -26,7 +26,7 @@ irc-bot that responds to "?fml".
 const fml = require('random_fml')
 const irc = require('irc')
 
-new irc.Client('irc.some_irc_server.net', 'botnick', {
+const client = new irc.Client('irc.some_irc_server.net', 'botnick', {
 	channels: ['#some_channel']
 })
 .addListener('message', function (from, to, message) {
