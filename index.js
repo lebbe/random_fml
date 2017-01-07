@@ -12,8 +12,9 @@ module.exports = function FML() {
 	return new Promise((resolve, reject) => {
 		rp(opts)
 			.then($ => {
-				let fml = $('.post.article[id] p').first().text()
-				resolve(fml.trim())
+				let fml = $('.post.article[id] p').first().text().trim()
+				if(!fml) reject('No FML found. Service might be down.')
+				else resolve(fml.trim())
 			})
 			.catch(err => reject('Error when finding random FML: ' + error))
 		})
