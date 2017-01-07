@@ -8,13 +8,20 @@ let opts = {
 	transform: body => cheerio.load(body, {normalizeWhitespace: true})
 }
 
+let cache = []
+
 module.exports = function FML() {
 	return new Promise((resolve, reject) => {
 		rp(opts)
 			.then($ => {
-				let fml = $('article p.block a').first().text().trim()
-				if(!fml) reject('No FML found. Service might be down.')
-				else resolve(fml.trim())
+				if(cache.length === 0) {
+					cache = $('article p.block a').map(function() {
+						return $(this).text()
+					}).get();					
+				}
+
+				if(cache.length === 0) reject('Couldt not find any FMLs. Service down?')
+				else resolve(cache.pop().trim())
 			})
 			.catch(err => reject('Error when finding random FML: ' + error))
 		})
