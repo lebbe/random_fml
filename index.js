@@ -5,7 +5,7 @@ const cheerio = require('cheerio')
 
 let opts = {
 	uri: 'http://www.fmylife.com/random',
-	transform: body => cheerio.load(body)
+	transform: body => cheerio.load(body, {normalizeWhitespace: true})
 }
 
 module.exports = function FML() {
