@@ -12,7 +12,7 @@ module.exports = function FML() {
 	return new Promise((resolve, reject) => {
 		rp(opts)
 			.then($ => {
-				let fml = $('.post.article[id] p').first().text().trim()
+				let fml = $('article p.block a').first().text().trim()
 				if(!fml) reject('No FML found. Service might be down.')
 				else resolve(fml.trim())
 			})
