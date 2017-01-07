@@ -1,6 +1,6 @@
 {
   "name": "random_fml",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "Gives a promise of a random FML.",
   "main": "index.js",
   "scripts": {
